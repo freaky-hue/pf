@@ -5,6 +5,8 @@ import { Button } from 'semantic-ui-react';
 const array = [1,2,3,4,5,6,7,8];
 
 
+console.log(array.length);
+
 function App() {
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
