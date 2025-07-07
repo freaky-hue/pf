@@ -1,0 +1,34 @@
+.ui.form {
+    .field {
+        .input {
+            input{
+                background-color: $background-secondary;
+                border-color: $background-secondary;
+                color: $font-light;
+            
+                &:hover,
+                &:active,
+                &:focus{
+                    background-color: $background-secondary;
+                }
+
+            }
+
+            i{
+                color: $font-light;
+            }
+        }
+    }
+    .field.error{
+        .ui.input{
+            input{
+                background-color: $background-secondary;
+                border: 1px solid $danger;
+                color: $danger;
+            }
+            i{
+                color: $danger;
+            }
+        }    
+    }
+}

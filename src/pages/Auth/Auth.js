@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './Auth.scss'
-import {Button} from "semantic-ui-react";
+import {Image} from "semantic-ui-react";
+import {logoNameWhite} from "../../assets";
 import {AuthOptions, RegisterForm, LoginForm} from "../../components/Auth";
 
 export function Auth() {
@@ -11,11 +12,11 @@ export function Auth() {
   const goBack = () => setTypeForm(null)
   
   const renderForm = () =>{
-    if(typeForm == "login"){
+    if(typeForm === "login"){
       return <LoginForm openRegister={openRegister} goBack={goBack}/>;
 
     }
-    if(typeForm == "register"){
+    if(typeForm === "register"){
       return <RegisterForm openLogin={openLogin} goBack={goBack}/>;
 
     }
@@ -23,8 +24,12 @@ export function Auth() {
   }
   
   return (
-    <div>
-        {renderForm()}
+    <div className='auth'>
+        <div className='auth__content '>
+          <Image src={logoNameWhite} alt="Musicfy" className='auth__content-logo'/>
+
+          {renderForm()}
+        </div>
     </div>
   );
 }
