@@ -1,8 +1,6 @@
 const electron = require("electron");
 const path = require('path');
-const server = require('../ts/a')
 const BrowserWindow = electron.BrowserWindow;
-const http = require('http');
 const isDev = require("electron-is-dev");
 
 
@@ -10,7 +8,7 @@ const app = electron.app;
 
 let mainWindow;
 
-const serverInstance = http.createServer(server);
+
 
 
 function createWindow() {
@@ -36,7 +34,6 @@ app.whenReady().then(()=>{
   createWindow();
   
 
-  serverInstance.listen(3001, ()=>{});
 });
 
 app.on("window-all-closed", () => {
